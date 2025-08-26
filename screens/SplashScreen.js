@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     opacity: 0.9,
     textAlign: 'center',
-    fontFamily: 'PlaypenSans_400Regular',
+    // fontFamily: 'PlaypenSans_400Regular', // Temporary disable for build
   },
   startButton: {
     backgroundColor: '#d7c64c',
@@ -80,6 +80,6 @@ const styles = StyleSheet.create({
     color: '#011f44',
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: 'PlaypenSans_400Regular',
+    // fontFamily: 'PlaypenSans_400Regular', // Temporary disable for build
   },
 });

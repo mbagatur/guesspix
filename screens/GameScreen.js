@@ -325,6 +325,6 @@ const styles = StyleSheet.create({
     color: '#011f44',
     fontSize: width * 0.045, // 4.5% of screen width
     fontWeight: '500',
-    fontFamily: 'PlaypenSans_400Regular',
+    // fontFamily: 'PlaypenSans_400Regular', // Temporary disable for build
   },
 });

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import {
-  useFonts,
-  PlaypenSans_400Regular,
-} from '@expo-google-fonts/playpen-sans';
+// Temporarily comment out font imports to test build
+// import {
+//   useFonts,
+//   PlaypenSans_400Regular,
+// } from '@expo-google-fonts/playpen-sans';
 import SplashScreen from './screens/SplashScreen';
 import GameScreen from './screens/GameScreen';
 import ResultScreen from './screens/ResultScreen';
@@ -15,9 +16,11 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [totalQuestions] = useState(4);
 
-  let [fontsLoaded] = useFonts({
-    PlaypenSans_400Regular,
-  });
+  // Temporarily disable font loading
+  // let [fontsLoaded] = useFonts({
+  //   PlaypenSans_400Regular,
+  // });
+  const fontsLoaded = true; // Temporary for build testing
 
   const handleStartGame = () => {
     setCurrentScreen('game');

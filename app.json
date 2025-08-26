@@ -11,9 +11,7 @@
       "ios",
       "android"
     ],
-    "icon": "./assets/images/logo.png",
     "splash": {
-      "image": "./assets/images/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#4c669f"
     },
@@ -23,18 +21,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.guesspix.app",
-      "buildNumber": "1",
-      "icon": "./assets/images/logo.png"
+      "buildNumber": "1"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
-        "backgroundColor": "#4c669f"
-      },
       "package": "com.guesspix.app",
-      "versionCode": 1,
-      "icon": "./assets/images/logo.png",
-      "permissions": []
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro"

@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 4,
-    fontFamily: 'PlaypenSans_400Regular',
+    // fontFamily: 'PlaypenSans_400Regular', // Temporary disable for build
   },
   scoreCircle: {
     width: width * 0.35, // 35% of screen width
@@ -163,6 +163,6 @@ const styles = StyleSheet.create({
     color: '#011f44',
     fontSize: width * 0.045, // 4.5% of screen width
     fontWeight: '500',
-    fontFamily: 'PlaypenSans_400Regular',
+    // fontFamily: 'PlaypenSans_400Regular', // Temporary disable for build
   },
 });
