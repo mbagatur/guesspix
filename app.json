@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "GuessPix",
+    "slug": "guesspix",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "description": "A fun mobile guessing game where you identify objects from zoomed images!",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "icon": "./assets/images/logo.png",
+    "splash": {
+      "image": "./assets/images/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4c669f"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.guesspix.app",
+      "buildNumber": "1",
+      "icon": "./assets/images/logo.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#4c669f"
+      },
+      "package": "com.guesspix.app",
+      "versionCode": 1,
+      "icon": "./assets/images/logo.png",
+      "permissions": []
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a8f8bd72-cf0d-4a54-8454-e5244f56dc70"
+      }
+    },
+    "owner": "mbagatur"
+  }
+}
