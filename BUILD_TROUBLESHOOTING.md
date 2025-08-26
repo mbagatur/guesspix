@@ -9,9 +9,13 @@
 4. **Fixed .gitignore** - Added .expo/ and removed from git tracking
 5. **Simplified app.json** - Removed potentially problematic adaptive icon configuration
 6. **Fixed dependencies** - Ran expo install --fix
+7. **Disabled custom fonts** - Temporarily removed Google Fonts to isolate JS bundling issue
 
 ### ✅ **Current Status: 15/16 checks pass!**
 Only remaining issue is SDK version (for Play Store submission only)
+
+### 🔍 **Latest Fix Attempt:**
+The JavaScript bundling error suggests a runtime issue. Temporarily disabled custom fonts (Google Fonts) to test if that was causing the bundling failure.
 
 ### 🔧 Next Steps to Try:
 
