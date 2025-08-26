@@ -20,25 +20,25 @@ const height = Math.min(screenHeight, 800);
 const gameData = [
   {
     id: 1,
-    image: { uri: 'https://picsum.photos/400/400?random=1' }, // Temporary placeholder
+    image: require('../assets/images/questions/1.png'),
     correctAnswer: 'Strawberry',
     options: ['Lemon', 'Strawberry', 'Tomato', 'Apple'], // Correct answer at position 1 (b)
   },
   {
     id: 2,
-    image: { uri: 'https://picsum.photos/400/400?random=2' }, // Temporary placeholder
+    image: require('../assets/images/questions/2.png'),
     correctAnswer: 'Tiger',
     options: ['Lion', 'Dog', 'Tiger', 'Zebra'], // Correct answer at position 2 (c)
   },
   {
     id: 3,
-    image: { uri: 'https://picsum.photos/400/400?random=3' }, // Temporary placeholder
+    image: require('../assets/images/questions/3.png'),
     correctAnswer: 'Pineapple',
     options: ['Pineapple', 'Banana', 'Corn', 'Watermelon'], // Correct answer at position 0 (a)
   },
   {
     id: 4,
-    image: { uri: 'https://picsum.photos/400/400?random=4' }, // Temporary placeholder
+    image: require('../assets/images/questions/4.png'),
     correctAnswer: 'Raccoon',
     options: ['Cat', 'Dog', 'Rabbit', 'Raccoon'], // Correct answer at position 3 (d)
   },

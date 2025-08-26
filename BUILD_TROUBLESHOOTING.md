@@ -15,18 +15,29 @@
 Only remaining issue is SDK version (for Play Store submission only)
 
 ### 🔍 **Latest Fix Attempt:**
-The JavaScript bundling error suggests a runtime issue. 
+**Systematic debugging approach to isolate the JavaScript bundling issue:**
 
 **Attempts made:**
-1. ✅ **Disabled custom fonts** - Removed Google Fonts to test if that was causing bundling failure
-2. 🔄 **Replaced local image requires** - Changed `require('../assets/images/questions/1.png')` to placeholder URIs to test if asset bundling is the issue
+1. ✅ **Disabled custom fonts** - Removed Google Fonts imports
+2. ✅ **Replaced local image requires** - Used placeholder URIs instead of local assets  
+3. 🔄 **Created minimal app** - Testing with bare-bones React Native app
 
-**Current theory:** The Metro bundler might be having issues with either:
-- Custom font loading during production build
-- Local image asset requires during bundling process
+**Current Status:**
+- ✅ **App runs locally** - `npx expo start --no-dev` works successfully
+- ❌ **EAS preview builds fail** - JavaScript bundling error during production build
+- 🔄 **Testing development profile** - Different build configuration may resolve issue
 
-**If this build succeeds:** The issue was with local asset requires  
-**If this build fails:** Need to investigate Metro bundler configuration or other JS issues
+**Key Discovery:** The app bundles successfully in local development mode, indicating the JavaScript code is valid. The issue appears to be specific to the EAS production build process.
+
+**If development profile succeeds:** Issue is with preview profile bundling settings  
+**If development profile fails:** May need to upgrade Expo SDK or use different build configuration
+
+**If minimal app succeeds:** Issue is in our complex app logic (screens, imports, etc.)  
+**If minimal app fails:** Issue is with Expo SDK version, build configuration, or environment
+
+**Next steps based on results:**
+- Success → Gradually re-add components to identify problematic code
+- Failure → Try legacy Expo build system or upgrade SDK version
 
 ### 🔧 Next Steps to Try:
 
