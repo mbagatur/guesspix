@@ -9,7 +9,8 @@
     "privacy": "public",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
     "splash": {
       "resizeMode": "contain",
