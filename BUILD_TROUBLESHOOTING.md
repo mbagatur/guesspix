@@ -15,7 +15,18 @@
 Only remaining issue is SDK version (for Play Store submission only)
 
 ### 🔍 **Latest Fix Attempt:**
-The JavaScript bundling error suggests a runtime issue. Temporarily disabled custom fonts (Google Fonts) to test if that was causing the bundling failure.
+The JavaScript bundling error suggests a runtime issue. 
+
+**Attempts made:**
+1. ✅ **Disabled custom fonts** - Removed Google Fonts to test if that was causing bundling failure
+2. 🔄 **Replaced local image requires** - Changed `require('../assets/images/questions/1.png')` to placeholder URIs to test if asset bundling is the issue
+
+**Current theory:** The Metro bundler might be having issues with either:
+- Custom font loading during production build
+- Local image asset requires during bundling process
+
+**If this build succeeds:** The issue was with local asset requires  
+**If this build fails:** Need to investigate Metro bundler configuration or other JS issues
 
 ### 🔧 Next Steps to Try:
 
