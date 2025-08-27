@@ -1,20 +1,16 @@
 {
-  "remoteDataUrl": "https://raw.githubusercontent.com/yourusername/guesspix-data/main/gameData.json",
-  "enableRemoteData": false,
+  "remoteDataUrl": "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
+  "enableRemoteData": true,
   "cacheTimeout": 300000,
   "retryAttempts": 3,
   "fallbackToLocal": true,
   "alternativeUrls": [
-    "https://yourusername.github.io/guesspix-data/gameData.json",
-    "https://your-project.firebaseio.com/gameData.json",
-    "https://your-site.netlify.app/gameData.json"
+    "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json"
   ],
   "notes": {
-    "setup": "Set enableRemoteData to true and update remoteDataUrl with your actual hosting URL",
-    "remoteDataUrl": "Primary URL to fetch questions from - update this with your actual URL",
-    "enableRemoteData": "Currently set to FALSE for testing - set to TRUE when you have remote hosting",
-    "cacheTimeout": "How long to cache remote data in milliseconds",
-    "retryAttempts": "Number of retry attempts for failed requests",
-    "fallbackToLocal": "Whether to use local data if remote fails"
+    "setup": "✅ Configured for mbagatur/guesspix repository",
+    "remoteDataUrl": "GitHub Pages URL - will be active after enabling Pages in repo settings",
+    "enableRemoteData": "Set to TRUE - remote loading is enabled",
+    "rawGitHub": "Alternative URL uses raw.githubusercontent.com (works immediately after push)"
   }
 }
