@@ -35,6 +35,7 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
         // Shuffle questions for variety and limit to totalQuestions
         const shuffledData = shuffleArray(data).slice(0, totalQuestions);
         setGameData(shuffledData);
+        console.log(`Loaded ${shuffledData.length} questions for the game`);
       } catch (error) {
         console.error('Failed to load game data:', error);
         Alert.alert('Error', 'Failed to load questions. Please try again.');
@@ -75,20 +76,20 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
   };
 
   const handleNext = () => {
-    // Update score if the current answer is correct
-    if (isCorrect) {
-      setScore(prevScore => prevScore + 1);
-    }
+    // Calculate the updated score first
+    const updatedScore = score + (isCorrect ? 1 : 0);
     
     if (currentQuestion + 1 < totalQuestions) {
+      // Not the last question - continue to next question
+      setScore(updatedScore);
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
       setShowResult(false);
       setIsCorrect(false);
     } else {
-      // For the final question, calculate the final score
-      const finalScore = score + (isCorrect ? 1 : 0);
-      onGameComplete(finalScore);
+      // This is the last question - complete the game
+      console.log('Game complete! Final score:', updatedScore, 'out of', totalQuestions);
+      onGameComplete(updatedScore);
     }
   };
 

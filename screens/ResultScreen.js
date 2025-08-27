@@ -15,6 +15,9 @@ const width = Math.min(screenWidth, 400);
 const height = Math.min(screenHeight, 800);
 
 export default function ResultScreen({ score, totalQuestions, onNewGame }) {
+  // Debug logging - remove in production
+  // console.log('ResultScreen props:', { score, totalQuestions, onNewGame });
+  
   const percentage = Math.round((score / totalQuestions) * 100);
   
   const getScoreMessage = () => {
@@ -66,6 +69,7 @@ export default function ResultScreen({ score, totalQuestions, onNewGame }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // backgroundColor: 'rgba(255, 0, 0, 0.1)', // Temporary debug background - removed
   },
   header: {
     paddingHorizontal: width * 0.05,

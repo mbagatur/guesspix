@@ -14,7 +14,7 @@ import ResultScreen from './screens/ResultScreen';
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('splash');
   const [score, setScore] = useState(0);
-  const [totalQuestions] = useState(10); // Updated to support more questions
+  const [totalQuestions] = useState(4); // Temporarily set to 4 to match hardcoded questions
 
   // Temporarily disable font loading
   // let [fontsLoaded] = useFonts({

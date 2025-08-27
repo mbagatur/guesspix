@@ -1,5 +1,17 @@
 import localGameData from '../assets/gameData.json';
-import config from '../config/remoteConfig.json';
+// import config from '../config/remoteConfig.json';
+
+// Inline config for better compatibility with Metro bundler
+const config = {
+  remoteDataUrl: "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
+  enableRemoteData: false, // Temporarily disabled for testing
+  cacheTimeout: 300000,
+  retryAttempts: 3,
+  fallbackToLocal: true,
+  alternativeUrls: [
+    "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json"
+  ]
+};
 
 // Create a mapping of image paths to require statements
 const imageMap = {
