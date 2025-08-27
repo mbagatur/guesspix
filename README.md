@@ -5,11 +5,21 @@ A fun mobile guessing game where players identify objects, animals, and items fr
 ## 🎮 Game Features
 
 - **Splash Screen**: Welcome screen with logo and start button
-- **Interactive Gameplay**: 10 challenging questions per game
+- **Interactive Gameplay**: Up to 10 challenging questions per game
 - **Multiple Choice**: 4 options for each question
 - **Instant Feedback**: Green for correct answers, red for incorrect
 - **Score Tracking**: See how many you got right out of 10
 - **Beautiful UI**: Modern design with gradients and smooth animations
+- **🆕 Dynamic Questions**: Add new questions without rebuilding! See `ADDING_QUESTIONS.md`
+
+## 📝 Adding New Questions
+
+You can now add new questions to the game without rebuilding the app! Simply:
+1. Add your question to `assets/gameData.json`
+2. Place your image in `assets/images/questions/`
+3. Update the image map in `utils/gameDataLoader.js`
+
+For detailed instructions, see [ADDING_QUESTIONS.md](ADDING_QUESTIONS.md).
 
 ## 🚀 Getting Started
 

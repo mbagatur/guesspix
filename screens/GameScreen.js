@@ -9,6 +9,7 @@ import {
   Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { loadGameData, shuffleArray } from '../utils/gameDataLoader';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -16,40 +17,43 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 const width = Math.min(screenWidth, 400);
 const height = Math.min(screenHeight, 800);
 
-// Sample game data - in a real app, this would come from an API or database
-const gameData = [
-  {
-    id: 1,
-    image: require('../assets/images/questions/1.png'),
-    correctAnswer: 'Strawberry',
-    options: ['Lemon', 'Strawberry', 'Tomato', 'Apple'], // Correct answer at position 1 (b)
-  },
-  {
-    id: 2,
-    image: require('../assets/images/questions/2.png'),
-    correctAnswer: 'Tiger',
-    options: ['Lion', 'Dog', 'Tiger', 'Zebra'], // Correct answer at position 2 (c)
-  },
-  {
-    id: 3,
-    image: require('../assets/images/questions/3.png'),
-    correctAnswer: 'Pineapple',
-    options: ['Pineapple', 'Banana', 'Corn', 'Watermelon'], // Correct answer at position 0 (a)
-  },
-  {
-    id: 4,
-    image: require('../assets/images/questions/4.png'),
-    correctAnswer: 'Raccoon',
-    options: ['Cat', 'Dog', 'Rabbit', 'Raccoon'], // Correct answer at position 3 (d)
-  },
-];
-
 export default function GameScreen({ onGameComplete, totalQuestions }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [gameData, setGameData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load game data on component mount
+  useEffect(() => {
+    const loadQuestions = async () => {
+      try {
+        setIsLoading(true);
+        const data = await loadGameData();
+        // Shuffle questions for variety and limit to totalQuestions
+        const shuffledData = shuffleArray(data).slice(0, totalQuestions);
+        setGameData(shuffledData);
+      } catch (error) {
+        console.error('Failed to load game data:', error);
+        Alert.alert('Error', 'Failed to load questions. Please try again.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadQuestions();
+  }, [totalQuestions]);
+
+  // Show loading screen while data is being loaded
+  if (isLoading || gameData.length === 0) {
+    return (
+      <View style={[styles.container, styles.loadingContainer]}>
+        <Text style={styles.loadingText}>Loading Questions...</Text>
+      </View>
+    );
+  }
 
   const currentData = gameData[currentQuestion];
 
@@ -182,6 +186,15 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  loadingContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    fontSize: width * 0.05,
+    color: '#333',
+    fontWeight: '500',
   },
   header: {
     paddingHorizontal: 20,

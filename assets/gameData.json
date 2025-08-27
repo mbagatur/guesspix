@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "imagePath": "questions/1.png",
+    "correctAnswer": "Strawberry",
+    "options": ["Lemon", "Strawberry", "Tomato", "Apple"]
+  },
+  {
+    "id": 2,
+    "imagePath": "questions/2.png",
+    "correctAnswer": "Tiger",
+    "options": ["Lion", "Dog", "Tiger", "Zebra"]
+  },
+  {
+    "id": 3,
+    "imagePath": "questions/3.png",
+    "correctAnswer": "Pineapple",
+    "options": ["Pineapple", "Banana", "Corn", "Watermelon"]
+  },
+  {
+    "id": 4,
+    "imagePath": "questions/4.png",
+    "correctAnswer": "Raccoon",
+    "options": ["Cat", "Dog", "Rabbit", "Raccoon"]
+  },
+  {
+    "id": 5,
+    "imagePath": "questions/5.png",
+    "correctAnswer": "Elephant",
+    "options": ["Horse", "Elephant", "Rhino", "Hippo"]
+  },
+  {
+    "id": 6,
+    "imagePath": "questions/6.png",
+    "correctAnswer": "Pizza",
+    "options": ["Sandwich", "Burger", "Pizza", "Taco"]
+  },
+  {
+    "id": 7,
+    "imagePath": "questions/7.png",
+    "correctAnswer": "Guitar",
+    "options": ["Piano", "Violin", "Guitar", "Drums"]
+  },
+  {
+    "id": 8,
+    "imagePath": "questions/8.png",
+    "correctAnswer": "Butterfly",
+    "options": ["Butterfly", "Bee", "Moth", "Dragonfly"]
+  },
+  {
+    "id": 9,
+    "imagePath": "questions/9.png",
+    "correctAnswer": "Rose",
+    "options": ["Tulip", "Rose", "Sunflower", "Daisy"]
+  },
+  {
+    "id": 10,
+    "imagePath": "questions/10.png",
+    "correctAnswer": "Bicycle",
+    "options": ["Car", "Motorcycle", "Bicycle", "Scooter"]
+  }
+]
