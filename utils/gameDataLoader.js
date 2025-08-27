@@ -1,19 +1,23 @@
 import localGameData from '../assets/gameData.json';
-// import config from '../config/remoteConfig.json';
 
 // Inline config for better compatibility with Metro bundler
 const config = {
   remoteDataUrl: "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
-  enableRemoteData: false, // Temporarily disabled for testing
+  remoteImageBaseUrl: "https://mbagatur.github.io/guesspix/remote-sample/images/",
+  enableRemoteData: false, // Temporarily disabled until GitHub Pages is enabled
+  enableRemoteImages: false, // Temporarily disabled until GitHub Pages is enabled
   cacheTimeout: 300000,
   retryAttempts: 3,
   fallbackToLocal: true,
   alternativeUrls: [
     "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json"
+  ],
+  alternativeImageBaseUrls: [
+    "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/images/"
   ]
 };
 
-// Create a mapping of image paths to require statements
+// Create a mapping of image paths to require statements (fallback for local images)
 const imageMap = {
   'questions/1.png': require('../assets/images/questions/1.png'),
   'questions/2.png': require('../assets/images/questions/2.png'),
@@ -73,7 +77,9 @@ export const loadGameData = async () => {
   
   try {
     // Try to fetch from remote source first
-    gameDataJson = await fetchRemoteGameData();
+    if (config.enableRemoteData) {
+      gameDataJson = await fetchRemoteGameData();
+    }
   } catch (error) {
     console.log('Using local fallback data due to remote fetch failure');
     // Fall back to local data if remote fails
@@ -81,13 +87,28 @@ export const loadGameData = async () => {
   }
 
   try {
-    // Process the JSON data to include image requires
-    const processedData = gameDataJson
-      .filter(question => imageMap[question.imagePath]) // Only include questions with available images
-      .map(question => ({
+    // Process the JSON data to include images
+    const processedData = gameDataJson.map(question => {
+      let imageSource;
+      
+      if (config.enableRemoteImages) {
+        // Use remote image URL
+        imageSource = { uri: config.remoteImageBaseUrl + question.imagePath };
+        console.log(`Using remote image: ${config.remoteImageBaseUrl + question.imagePath}`);
+      } else if (imageMap[question.imagePath]) {
+        // Use local bundled image
+        imageSource = imageMap[question.imagePath];
+      } else {
+        // Skip questions without available local images
+        console.warn(`No local image found for ${question.imagePath}`);
+        return null;
+      }
+      
+      return {
         ...question,
-        image: imageMap[question.imagePath]
-      }));
+        image: imageSource
+      };
+    }).filter(Boolean); // Remove null entries
 
     console.log(`Processed ${processedData.length} questions for the game`);
     return processedData;
