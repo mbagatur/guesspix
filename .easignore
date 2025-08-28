@@ -1,0 +1,23 @@
+# EAS Build Ignore File
+# Files and directories that should not be included in EAS builds
+
+# Remote content folder - only for GitHub Pages hosting
+remote-sample/
+
+# Documentation and guides
+*.md
+BUILD_TROUBLESHOOTING.md
+DEPLOYMENT_GUIDE.md
+GITHUB_SETUP.md
+REMOTE_HOSTING.md
+REMOTE_IMAGES_GUIDE.md
+50_QUESTIONS_GUIDE.md
+ADDING_QUESTIONS.md
+
+# Development files
+dist/
+.vscode/
+
+# Git and GitHub files
+.git/
+.github/

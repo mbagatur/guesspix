@@ -11,7 +11,8 @@
       },
       "ios": {
         "resourceClass": "m-medium"
-      }
+      },
+      "ignore": "remote-sample/**/*"
     },
     "preview": {
       "distribution": "internal",
@@ -20,7 +21,8 @@
       },
       "ios": {
         "resourceClass": "m-medium"
-      }
+      },
+      "ignore": "remote-sample/**/*"
     },
     "production": {
       "android": {
@@ -28,7 +30,8 @@
       },
       "ios": {
         "resourceClass": "m-medium"
-      }
+      },
+      "ignore": "remote-sample/**/*"
     }
   },
   "submit": {
