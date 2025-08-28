@@ -1,16 +1,17 @@
 {
-  "remoteDataUrl": "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
+  "remoteDataUrl": "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json",
   "enableRemoteData": true,
   "cacheTimeout": 300000,
   "retryAttempts": 3,
-  "fallbackToLocal": true,
+  "fallbackToLocal": false,
   "alternativeUrls": [
-    "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json"
+    "https://mbagatur.github.io/guesspix/remote-sample/gameData.json"
   ],
   "notes": {
-    "setup": "✅ Configured for mbagatur/guesspix repository",
-    "remoteDataUrl": "GitHub Pages URL - will be active after enabling Pages in repo settings",
+    "setup": "✅ Configured for mbagatur/guesspix repository", 
+    "remoteDataUrl": "Raw GitHub URL - works immediately after push",
     "enableRemoteData": "Set to TRUE - remote loading is enabled",
-    "rawGitHub": "Alternative URL uses raw.githubusercontent.com (works immediately after push)"
+    "alternativeUrl": "GitHub Pages URL - fallback when Pages is enabled",
+    "status": "PRIMARY: Raw GitHub (active) | FALLBACK: GitHub Pages (inactive)"
   }
 }

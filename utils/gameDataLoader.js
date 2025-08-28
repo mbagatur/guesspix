@@ -1,12 +1,12 @@
 // Inline config for better compatibility with Metro bundler
 const config = {
-  remoteDataUrl: "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
-  remoteImageBaseUrl: "https://mbagatur.github.io/guesspix/remote-sample/images/",
+  remoteDataUrl: "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json",
+  remoteImageBaseUrl: "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/images/",
   questionsPerGame: 10, // Number of random questions to select for each game
   cacheTimeout: 300000,
   retryAttempts: 3,
   alternativeUrls: [
-    "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json"
+    "https://mbagatur.github.io/guesspix/remote-sample/gameData.json" // Fallback to GitHub Pages when available
   ]
 };
 
