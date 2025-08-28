@@ -23,13 +23,25 @@ const imageMap = {
   'questions/2.png': require('../assets/images/questions/2.png'),
   'questions/3.png': require('../assets/images/questions/3.png'),
   'questions/4.png': require('../assets/images/questions/4.png'),
-  // Add more images as needed - you'll need to add the actual image files
-  // 'questions/5.png': require('../assets/images/questions/5.png'),
-  // 'questions/6.png': require('../assets/images/questions/6.png'),
-  // 'questions/7.png': require('../assets/images/questions/7.png'),
-  // 'questions/8.png': require('../assets/images/questions/8.png'),
-  // 'questions/9.png': require('../assets/images/questions/9.png'),
-  // 'questions/10.png': require('../assets/images/questions/10.png'),
+  'questions/5.png': require('../assets/images/questions/5.png'),
+  'questions/6.png': require('../assets/images/questions/6.png'),
+  'questions/7.png': require('../assets/images/questions/7.png'),
+  'questions/8.png': require('../assets/images/questions/8.png'),
+  'questions/9.png': require('../assets/images/questions/9.png'),
+  'questions/11.png': require('../assets/images/questions/11.png'),
+  'questions/12.png': require('../assets/images/questions/12.png'),
+  'questions/13.png': require('../assets/images/questions/13.png'),
+  'questions/14.png': require('../assets/images/questions/14.png'),
+  'questions/15.png': require('../assets/images/questions/15.png'),
+  'questions/16.png': require('../assets/images/questions/16.png'),
+  'questions/18.png': require('../assets/images/questions/18.png'),
+  'questions/20.png': require('../assets/images/questions/20.png'),
+  'questions/21.png': require('../assets/images/questions/21.png'),
+  'questions/22.png': require('../assets/images/questions/22.png'),
+  'questions/23.png': require('../assets/images/questions/23.png'),
+  'questions/24.png': require('../assets/images/questions/24.png'),
+  'questions/25.png': require('../assets/images/questions/25.png'),
+  // Missing images: 10, 17, 19, 26-50 (need to be added)
 };
 
 // Function to fetch game data from remote URL with retry logic
