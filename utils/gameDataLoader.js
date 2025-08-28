@@ -4,8 +4,9 @@ import localGameData from '../assets/gameData.json';
 const config = {
   remoteDataUrl: "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
   remoteImageBaseUrl: "https://mbagatur.github.io/guesspix/remote-sample/images/",
-  enableRemoteData: false, // Temporarily disabled until GitHub Pages is enabled
-  enableRemoteImages: false, // Temporarily disabled until GitHub Pages is enabled
+  enableRemoteData: true, // Enable remote loading for dynamic questions
+  enableRemoteImages: true, // Enable remote images for dynamic loading
+  questionsPerGame: 10, // Number of random questions to select for each game
   cacheTimeout: 300000,
   retryAttempts: 3,
   fallbackToLocal: true,
@@ -17,31 +18,45 @@ const config = {
   ]
 };
 
-// Create a mapping of image paths to require statements (fallback for local images)
-const imageMap = {
-  'questions/1.png': require('../assets/images/questions/1.png'),
-  'questions/2.png': require('../assets/images/questions/2.png'),
-  'questions/3.png': require('../assets/images/questions/3.png'),
-  'questions/4.png': require('../assets/images/questions/4.png'),
-  'questions/5.png': require('../assets/images/questions/5.png'),
-  'questions/6.png': require('../assets/images/questions/6.png'),
-  'questions/7.png': require('../assets/images/questions/7.png'),
-  'questions/8.png': require('../assets/images/questions/8.png'),
-  'questions/9.png': require('../assets/images/questions/9.png'),
-  'questions/11.png': require('../assets/images/questions/11.png'),
-  'questions/12.png': require('../assets/images/questions/12.png'),
-  'questions/13.png': require('../assets/images/questions/13.png'),
-  'questions/14.png': require('../assets/images/questions/14.png'),
-  'questions/15.png': require('../assets/images/questions/15.png'),
-  'questions/16.png': require('../assets/images/questions/16.png'),
-  'questions/18.png': require('../assets/images/questions/18.png'),
-  'questions/20.png': require('../assets/images/questions/20.png'),
-  'questions/21.png': require('../assets/images/questions/21.png'),
-  'questions/22.png': require('../assets/images/questions/22.png'),
-  'questions/23.png': require('../assets/images/questions/23.png'),
-  'questions/24.png': require('../assets/images/questions/24.png'),
-  'questions/25.png': require('../assets/images/questions/25.png'),
-  // Missing images: 10, 17, 19, 26-50 (need to be added)
+// Fallback local images - only used if remote loading fails completely
+const getLocalFallbackImage = (imagePath) => {
+  try {
+    const imageNumber = imagePath.match(/(\d+)\.png$/)?.[1];
+    if (imageNumber && parseInt(imageNumber) <= 25) {
+      // Only try to load local images we know exist (1-25)
+      switch (imageNumber) {
+        case '1': return require('../assets/images/questions/1.png');
+        case '2': return require('../assets/images/questions/2.png');
+        case '3': return require('../assets/images/questions/3.png');
+        case '4': return require('../assets/images/questions/4.png');
+        case '5': return require('../assets/images/questions/5.png');
+        case '6': return require('../assets/images/questions/6.png');
+        case '7': return require('../assets/images/questions/7.png');
+        case '8': return require('../assets/images/questions/8.png');
+        case '9': return require('../assets/images/questions/9.png');
+        case '10': return require('../assets/images/questions/10.png');
+        case '11': return require('../assets/images/questions/11.png');
+        case '12': return require('../assets/images/questions/12.png');
+        case '13': return require('../assets/images/questions/13.png');
+        case '14': return require('../assets/images/questions/14.png');
+        case '15': return require('../assets/images/questions/15.png');
+        case '16': return require('../assets/images/questions/16.png');
+        case '17': return require('../assets/images/questions/17.png');
+        case '18': return require('../assets/images/questions/18.png');
+        case '19': return require('../assets/images/questions/19.png');
+        case '20': return require('../assets/images/questions/20.png');
+        case '21': return require('../assets/images/questions/21.png');
+        case '22': return require('../assets/images/questions/22.png');
+        case '23': return require('../assets/images/questions/23.png');
+        case '24': return require('../assets/images/questions/24.png');
+        case '25': return require('../assets/images/questions/25.png');
+        default: return null;
+      }
+    }
+    return null;
+  } catch (error) {
+    return null;
+  }
 };
 
 // Function to fetch game data from remote URL with retry logic
@@ -85,35 +100,42 @@ const fetchRemoteGameData = async () => {
 
 // Function to load and process game data
 export const loadGameData = async () => {
-  let gameDataJson = localGameData; // Default to local data
+  let allQuestionsData = localGameData; // Default to local data
   
   try {
     // Try to fetch from remote source first
     if (config.enableRemoteData) {
-      gameDataJson = await fetchRemoteGameData();
+      allQuestionsData = await fetchRemoteGameData();
     }
   } catch (error) {
-    console.log('Using local fallback data due to remote fetch failure');
-    // Fall back to local data if remote fails
-    gameDataJson = localGameData;
+    console.log('Remote loading failed, using local fallback data');
+    allQuestionsData = localGameData;
   }
 
   try {
-    // Process the JSON data to include images
-    const processedData = gameDataJson.map(question => {
+    // Randomly shuffle all available questions
+    const shuffledQuestions = shuffleArray(allQuestionsData);
+    
+    // Take only the number of questions we need for the game
+    const selectedQuestions = shuffledQuestions.slice(0, config.questionsPerGame);
+    
+    console.log(`Selected ${selectedQuestions.length} random questions from ${allQuestionsData.length} available questions`);
+
+    // Process the selected questions to include images
+    const processedData = selectedQuestions.map(question => {
       let imageSource;
       
       if (config.enableRemoteImages) {
-        // Use remote image URL
+        // Use remote image URL - this allows unlimited questions without code changes
         imageSource = { uri: config.remoteImageBaseUrl + question.imagePath };
-        console.log(`Using remote image: ${config.remoteImageBaseUrl + question.imagePath}`);
-      } else if (imageMap[question.imagePath]) {
-        // Use local bundled image
-        imageSource = imageMap[question.imagePath];
+        console.log(`Loading remote image: ${question.imagePath}`);
       } else {
-        // Skip questions without available local images
-        console.warn(`No local image found for ${question.imagePath}`);
-        return null;
+        // Fallback to local image (only for questions 1-25)
+        imageSource = getLocalFallbackImage(question.imagePath);
+        if (!imageSource) {
+          console.warn(`No local fallback image found for ${question.imagePath}, skipping question`);
+          return null;
+        }
       }
       
       return {
@@ -122,12 +144,12 @@ export const loadGameData = async () => {
       };
     }).filter(Boolean); // Remove null entries
 
-    console.log(`Processed ${processedData.length} questions for the game`);
+    console.log(`Successfully processed ${processedData.length} questions for the game`);
     return processedData;
   } catch (error) {
     console.error('Error processing game data:', error);
-    // Fallback to original hardcoded data
-    return [
+    // Ultimate fallback to hardcoded questions (only if everything fails)
+    return shuffleArray([
       {
         id: 1,
         image: require('../assets/images/questions/1.png'),
@@ -152,7 +174,7 @@ export const loadGameData = async () => {
         correctAnswer: 'Raccoon',
         options: ['Cat', 'Dog', 'Rabbit', 'Raccoon'],
       },
-    ];
+    ]).slice(0, config.questionsPerGame);
   }
 };
 
