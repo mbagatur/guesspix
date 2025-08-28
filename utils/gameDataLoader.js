@@ -1,14 +1,10 @@
-import localGameData from '../assets/gameData.json';
-
 // Inline config for better compatibility with Metro bundler
 const config = {
   remoteDataUrl: "https://mbagatur.github.io/guesspix/remote-sample/gameData.json",
   remoteImageBaseUrl: "https://mbagatur.github.io/guesspix/remote-sample/images/",
-  enableRemoteData: true, // Enable remote loading for dynamic questions
   questionsPerGame: 10, // Number of random questions to select for each game
   cacheTimeout: 300000,
   retryAttempts: 3,
-  fallbackToLocal: true, // Fallback to local JSON data if remote fails
   alternativeUrls: [
     "https://raw.githubusercontent.com/mbagatur/guesspix/master/remote-sample/gameData.json"
   ]
@@ -16,10 +12,6 @@ const config = {
 
 // Function to fetch game data from remote URL with retry logic
 const fetchRemoteGameData = async () => {
-  if (!config.enableRemoteData) {
-    throw new Error('Remote data is disabled in configuration');
-  }
-
   const urls = [config.remoteDataUrl, ...config.alternativeUrls].filter(Boolean);
   
   for (const url of urls) {
@@ -55,19 +47,10 @@ const fetchRemoteGameData = async () => {
 
 // Function to load and process game data
 export const loadGameData = async () => {
-  let allQuestionsData = localGameData; // Default to local data
-  
   try {
-    // Try to fetch from remote source first
-    if (config.enableRemoteData) {
-      allQuestionsData = await fetchRemoteGameData();
-    }
-  } catch (error) {
-    console.log('Remote loading failed, using local fallback data');
-    allQuestionsData = localGameData;
-  }
-
-  try {
+    // Fetch from remote source - no fallback needed for a truly dynamic system
+    const allQuestionsData = await fetchRemoteGameData();
+    
     // Randomly shuffle all available questions
     const shuffledQuestions = shuffleArray(allQuestionsData);
     
@@ -91,8 +74,8 @@ export const loadGameData = async () => {
     console.log(`Successfully processed ${processedData.length} questions for the game`);
     return processedData;
   } catch (error) {
-    console.error('Error processing game data:', error);
-    // If everything fails, return empty array - game will show error state
+    console.error('Error loading game data:', error);
+    // Return empty array if remote loading fails - game will show error state
     return [];
   }
 };
