@@ -14,7 +14,7 @@ import ResultScreen from './screens/ResultScreen';
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('splash');
   const [score, setScore] = useState(0);
-  const [totalQuestions] = useState(10); // Can be 4-50 questions per game
+  const [totalQuestions, setTotalQuestions] = useState(10); // Dynamic total from remote data
 
   // Temporarily disable font loading
   // let [fontsLoaded] = useFonts({
@@ -27,8 +27,9 @@ export default function App() {
     setScore(0);
   };
 
-  const handleGameComplete = (finalScore) => {
+  const handleGameComplete = (finalScore, gameTotalQuestions) => {
     setScore(finalScore);
+    setTotalQuestions(gameTotalQuestions);
     setCurrentScreen('result');
   };
 
@@ -50,7 +51,7 @@ export default function App() {
       case 'splash':
         return <SplashScreen onStartGame={handleStartGame} />;
       case 'game':
-        return <GameScreen onGameComplete={handleGameComplete} totalQuestions={totalQuestions} />;
+        return <GameScreen onGameComplete={handleGameComplete} />;
       case 'result':
         return <ResultScreen score={score} totalQuestions={totalQuestions} onNewGame={handleNewGame} />;
       default:

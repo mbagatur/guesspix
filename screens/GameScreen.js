@@ -9,7 +9,7 @@ import {
   Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { loadGameData, shuffleArray } from '../utils/gameDataLoader';
+import { initializeGame, loadQuestionByIndex } from '../utils/gameDataLoader';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -17,46 +17,83 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 const width = Math.min(screenWidth, 400);
 const height = Math.min(screenHeight, 800);
 
-export default function GameScreen({ onGameComplete, totalQuestions }) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+export default function GameScreen({ onGameComplete }) {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionData, setCurrentQuestionData] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
-  const [gameData, setGameData] = useState([]);
+  const [totalGameQuestions, setTotalGameQuestions] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingQuestion, setIsLoadingQuestion] = useState(false);
 
-  // Load game data on component mount
+  // Initialize game on component mount (fast - no image loading)
   useEffect(() => {
-    const loadQuestions = async () => {
+    const initGame = async () => {
       try {
         setIsLoading(true);
-        const data = await loadGameData();
-        // Shuffle questions for variety and limit to totalQuestions
-        const shuffledData = shuffleArray(data).slice(0, totalQuestions);
-        setGameData(shuffledData);
-        console.log(`Loaded ${shuffledData.length} questions for the game`);
+        console.log('Initializing game...');
+        const gameInfo = await initializeGame();
+        setTotalGameQuestions(gameInfo.totalQuestions);
+        
+        if (gameInfo.totalQuestions > 0) {
+          console.log(`Game initialized with ${gameInfo.totalQuestions} questions`);
+          // Load first question
+          await loadCurrentQuestion(0);
+        } else {
+          Alert.alert('Error', 'No questions available. Please try again.');
+        }
       } catch (error) {
-        console.error('Failed to load game data:', error);
-        Alert.alert('Error', 'Failed to load questions. Please try again.');
+        console.error('Failed to initialize game:', error);
+        Alert.alert('Error', 'Failed to initialize game. Please try again.');
       } finally {
         setIsLoading(false);
       }
     };
 
-    loadQuestions();
-  }, [totalQuestions]);
+    initGame();
+  }, []);
 
-  // Show loading screen while data is being loaded
-  if (isLoading || gameData.length === 0) {
+  // Function to load current question on-demand
+  const loadCurrentQuestion = async (questionIndex) => {
+    try {
+      setIsLoadingQuestion(true);
+      console.log(`Loading question ${questionIndex + 1}...`);
+      const questionData = await loadQuestionByIndex(questionIndex);
+      
+      if (questionData) {
+        setCurrentQuestionData(questionData);
+        setCurrentQuestionIndex(questionIndex);
+        console.log(`Question ${questionIndex + 1} loaded successfully`);
+      } else {
+        throw new Error(`Failed to load question ${questionIndex + 1}`);
+      }
+    } catch (error) {
+      console.error('Failed to load question:', error);
+      Alert.alert('Error', 'Failed to load question. Please try again.');
+    } finally {
+      setIsLoadingQuestion(false);
+    }
+  };
+
+  // Show loading screen while initializing
+  if (isLoading) {
     return (
       <View style={[styles.container, styles.loadingContainer]}>
-        <Text style={styles.loadingText}>Loading Questions...</Text>
+        <Text style={styles.loadingText}>Initializing Game...</Text>
       </View>
     );
   }
 
-  const currentData = gameData[currentQuestion];
+  // Show loading for individual question
+  if (isLoadingQuestion || !currentQuestionData) {
+    return (
+      <View style={[styles.container, styles.loadingContainer]}>
+        <Text style={styles.loadingText}>Loading Question {currentQuestionIndex + 1}...</Text>
+      </View>
+    );
+  }
 
   const handleAnswerSelect = (answer) => {
     if (showResult) return; // Prevent selecting after showing result
@@ -69,27 +106,28 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
       return;
     }
     
-    const correct = selectedAnswer === currentData.correctAnswer;
+    const correct = selectedAnswer === currentQuestionData.correctAnswer;
     setIsCorrect(correct);
     setShowResult(true);
-    // Don't update score here, do it in handleNext to avoid double counting
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     // Calculate the updated score first
     const updatedScore = score + (isCorrect ? 1 : 0);
     
-    if (currentQuestion + 1 < totalQuestions) {
-      // Not the last question - continue to next question
+    if (currentQuestionIndex + 1 < totalGameQuestions) {
+      // Not the last question - load next question on-demand
       setScore(updatedScore);
-      setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
       setShowResult(false);
       setIsCorrect(false);
+      
+      // Load next question
+      await loadCurrentQuestion(currentQuestionIndex + 1);
     } else {
       // This is the last question - complete the game
-      console.log('Game complete! Final score:', updatedScore, 'out of', totalQuestions);
-      onGameComplete(updatedScore);
+      console.log('Game complete! Final score:', updatedScore, 'out of', totalGameQuestions);
+      onGameComplete(updatedScore, totalGameQuestions);
     }
   };
 
@@ -103,11 +141,11 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
     }
     
     // After revealing answers, show correct/incorrect
-    if (option === currentData.correctAnswer) {
+    if (option === currentQuestionData.correctAnswer) {
       return [styles.option, styles.correctOption];
     }
     
-    if (option === selectedAnswer && option !== currentData.correctAnswer) {
+    if (option === selectedAnswer && option !== currentQuestionData.correctAnswer) {
       return [styles.option, styles.incorrectOption];
     }
     
@@ -118,13 +156,13 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.questionCounter}>
-          Question {currentQuestion + 1} of {totalQuestions}
+          Question {currentQuestionIndex + 1} of {totalGameQuestions}
         </Text>
       </View>
 
       <View style={styles.imageContainer}>
         <Image
-          source={currentData.image}
+          source={currentQuestionData.image}
           style={[
             styles.image,
             showResult ? styles.imageRevealed : styles.imageZoomed
@@ -134,7 +172,7 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
       </View>
 
       <View style={styles.optionsContainer}>
-        {currentData.options.map((option, index) => (
+        {currentQuestionData.options.map((option, index) => (
           <TouchableOpacity
             key={index}
             style={getOptionStyle(option)}
@@ -145,9 +183,9 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
               <Text style={styles.optionText}>{option}</Text>
               {showResult && (
                 <View style={styles.iconContainer}>
-                  {option === currentData.correctAnswer && option === selectedAnswer ? (
+                  {option === currentQuestionData.correctAnswer && option === selectedAnswer ? (
                     <Ionicons name="checkmark-circle" size={34} color="#28a745" />
-                  ) : option === selectedAnswer && option !== currentData.correctAnswer ? (
+                  ) : option === selectedAnswer && option !== currentQuestionData.correctAnswer ? (
                     <Ionicons name="close-circle" size={34} color="#dc3545" />
                   ) : null}
                 </View>
@@ -175,7 +213,7 @@ export default function GameScreen({ onGameComplete, totalQuestions }) {
         ) : (
           <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
             <Text style={styles.buttonText}>
-              {currentQuestion + 1 < totalQuestions ? 'Next' : 'Finish'}
+              {currentQuestionIndex + 1 < totalGameQuestions ? 'Next' : 'Finish'}
             </Text>
           </TouchableOpacity>
         )}
