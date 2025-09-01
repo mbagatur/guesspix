@@ -510,5 +510,96 @@
   "imagePath": "questions/85.png",
   "correctAnswer": "Volcano",
   "options": ["Mountain", "Hill", "Volcano", "Cliff"]
+},
+{
+  "id": 86,
+  "imagePath": "questions/86.png",
+  "correctAnswer": "Walrus",
+  "options": ["Seal", "Walrus", "Sea Lion", "Otter"]
+},
+{
+  "id": 87,
+  "imagePath": "questions/87.png",
+  "correctAnswer": "Dragonfly",
+  "options": ["Bee", "Dragonfly", "Butterfly", "Moth"]
+},
+{
+  "id": 88,
+  "imagePath": "questions/88.png",
+  "correctAnswer": "Guava",
+  "options": ["Guava", "Pear", "Mango", "Apple"]
+},
+{
+  "id": 89,
+  "imagePath": "questions/89.png",
+  "correctAnswer": "Sloth",
+  "options": ["Monkey", "Koala", "Sloth", "Bear"]
+},
+{
+  "id": 90,
+  "imagePath": "questions/90.png",
+  "correctAnswer": "Telescope",
+  "options": ["Camera", "Binoculars", "Telescope", "Microscope"]
+},
+{
+  "id": 91,
+  "imagePath": "questions/91.png",
+  "correctAnswer": "Cranberry",
+  "options": ["Blueberry", "Cranberry", "Raspberry", "Cherry"]
+},
+{
+  "id": 92,
+  "imagePath": "questions/92.png",
+  "correctAnswer": "Moose",
+  "options": ["Deer", "Moose", "Elk", "Antelope"]
+},
+{
+  "id": 93,
+  "imagePath": "questions/93.png",
+  "correctAnswer": "Pineapple Plant",
+  "options": ["Cactus", "Pineapple Plant", "Agave", "Aloe Vera"]
+},
+{
+  "id": 94,
+  "imagePath": "questions/94.png",
+  "correctAnswer": "Mandolin",
+  "options": ["Banjo", "Mandolin", "Ukulele", "Guitar"]
+},
+{
+  "id": 95,
+  "imagePath": "questions/95.png",
+  "correctAnswer": "Cactus",
+  "options": ["Fern", "Cactus", "Palm", "Bamboo"]
+},
+{
+  "id": 96,
+  "imagePath": "questions/96.png",
+  "correctAnswer": "Falcon",
+  "options": ["Eagle", "Hawk", "Falcon", "Owl"]
+},
+{
+  "id": 97,
+  "imagePath": "questions/97.png",
+  "correctAnswer": "Starfish",
+  "options": ["Starfish", "Sea Urchin", "Jellyfish", "Clam"]
+},
+{
+  "id": 98,
+  "imagePath": "questions/98.png",
+  "correctAnswer": "Chameleon",
+  "options": ["Gecko", "Chameleon", "Lizard", "Iguana"]
+},
+{
+  "id": 99,
+  "imagePath": "questions/99.png",
+  "correctAnswer": "Kiwi Fruit",
+  "options": ["Kiwi Fruit", "Avocado", "Fig", "Plum"]
+},
+{
+  "id": 100,
+  "imagePath": "questions/100.png",
+  "correctAnswer": "Igloo",
+  "options": ["Igloo", "Tent", "Hut", "Cabin"]
 }
+
 ]
