@@ -238,6 +238,96 @@
     "imagePath": "questions/40.png",
     "correctAnswer": "Harp",
     "options": ["Banjo", "Harp", "Violin", "Guitar"]
-  }
+  },
+{
+  "id": 41,
+  "imagePath": "questions/41.png",
+  "correctAnswer": "Peacock",
+  "options": ["Turkey", "Parrot", "Peacock", "Swan"]
+},
+{
+  "id": 42,
+  "imagePath": "questions/42.png",
+  "correctAnswer": "Blueberry",
+  "options": ["Blueberry", "Grape", "Blackberry", "Plum"]
+},
+{
+  "id": 43,
+  "imagePath": "questions/43.png",
+  "correctAnswer": "Owl",
+  "options": ["Eagle", "Owl", "Hawk", "Falcon"]
+},
+{
+  "id": 44,
+  "imagePath": "questions/44.png",
+  "correctAnswer": "Train",
+  "options": ["Bus", "Car", "Train", "Tram"]
+},
+{
+  "id": 45,
+  "imagePath": "questions/45.png",
+  "correctAnswer": "Watermelon",
+  "options": ["Melon", "Pumpkin", "Watermelon", "Papaya"]
+},
+{
+  "id": 46,
+  "imagePath": "questions/46.png",
+  "correctAnswer": "Camel",
+  "options": ["Camel", "Horse", "Donkey", "Cow"]
+},
+{
+  "id": 47,
+  "imagePath": "questions/47.png",
+  "correctAnswer": "Drums",
+  "options": ["Guitar", "Violin", "Drums", "Piano"]
+},
+{
+  "id": 48,
+  "imagePath": "questions/48.png",
+  "correctAnswer": "Pomegranate",
+  "options": ["Apple", "Cherry", "Pomegranate", "Plum"]
+},
+{
+  "id": 49,
+  "imagePath": "questions/49.png",
+  "correctAnswer": "Seal",
+  "options": ["Otter", "Seal", "Walrus", "Sea Lion"]
+},
+{
+  "id": 50,
+  "imagePath": "questions/50.png",
+  "correctAnswer": "Tractor",
+  "options": ["Truck", "Bus", "Tractor", "Bulldozer"]
+},
+{
+  "id": 51,
+  "imagePath": "questions/51.png",
+  "correctAnswer": "Pine Tree",
+  "options": ["Oak Tree", "Palm Tree", "Pine Tree", "Maple Tree"]
+},
+{
+  "id": 52,
+  "imagePath": "questions/52.png",
+  "correctAnswer": "Leopard",
+  "options": ["Leopard", "Jaguar", "Cheetah", "Tiger"]
+},
+{
+  "id": 53,
+  "imagePath": "questions/53.png",
+  "correctAnswer": "Corn",
+  "options": ["Corn", "Wheat", "Barley", "Rice"]
+},
+{
+  "id": 54,
+  "imagePath": "questions/54.png",
+  "correctAnswer": "Trumpet",
+  "options": ["Flute", "Clarinet", "Trumpet", "Saxophone"]
+},
+{
+  "id": 55,
+  "imagePath": "questions/55.png",
+  "correctAnswer": "Koi Fish",
+  "options": ["Goldfish", "Koi Fish", "Carp", "Salmon"]
+}
 
 ]
