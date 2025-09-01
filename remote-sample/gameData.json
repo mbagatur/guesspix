@@ -419,6 +419,96 @@
   "imagePath": "questions/70.png",
   "correctAnswer": "Straw Hut",
   "options": ["Tent", "Straw Hut", "Cabin", "Igloo"]
-}
+},
 
+{
+  "id": 71,
+  "imagePath": "questions/71.png",
+  "correctAnswer": "Koala",
+  "options": ["Sloth", "Koala", "Panda", "Monkey"]
+},
+{
+  "id": 72,
+  "imagePath": "questions/72.png",
+  "correctAnswer": "Papaya",
+  "options": ["Papaya", "Mango", "Peach", "Melon"]
+},
+{
+  "id": 73,
+  "imagePath": "questions/73.png",
+  "correctAnswer": "Saxophone",
+  "options": ["Saxophone", "Trumpet", "Trombone", "Clarinet"]
+},
+{
+  "id": 74,
+  "imagePath": "questions/74.png",
+  "correctAnswer": "Fox",
+  "options": ["Dog", "Coyote", "Fox", "Wolf"]
+},
+{
+  "id": 75,
+  "imagePath": "questions/75.png",
+  "correctAnswer": "Avocado",
+  "options": ["Avocado", "Pear", "Mango", "Papaya"]
+},
+{
+  "id": 76,
+  "imagePath": "questions/76.png",
+  "correctAnswer": "Deer",
+  "options": ["Antelope", "Deer", "Moose", "Goat"]
+},
+{
+  "id": 77,
+  "imagePath": "questions/77.png",
+  "correctAnswer": "Accordion",
+  "options": ["Accordion", "Harmonica", "Organ", "Keyboard"]
+},
+{
+  "id": 78,
+  "imagePath": "questions/78.png",
+  "correctAnswer": "Pinecone",
+  "options": ["Acorn", "Nut", "Pinecone", "Seed"]
+},
+{
+  "id": 79,
+  "imagePath": "questions/79.png",
+  "correctAnswer": "Pelican",
+  "options": ["Pelican", "Crane", "Stork", "Heron"]
+},
+{
+  "id": 80,
+  "imagePath": "questions/80.png",
+  "correctAnswer": "Radish",
+  "options": ["Radish", "Turnip", "Beetroot", "Onion"]
+},
+{
+  "id": 81,
+  "imagePath": "questions/81.png",
+  "correctAnswer": "Canoe",
+  "options": ["Canoe", "Kayak", "Boat", "Raft"]
+},
+{
+  "id": 82,
+  "imagePath": "questions/82.png",
+  "correctAnswer": "Lynx",
+  "options": ["Bobcat", "Tiger", "Lynx", "Cheetah"]
+},
+{
+  "id": 83,
+  "imagePath": "questions/83.png",
+  "correctAnswer": "Pomegranate",
+  "options": ["Plum", "Pomegranate", "Cherry", "Apple"]
+},
+{
+  "id": 84,
+  "imagePath": "questions/84.png",
+  "correctAnswer": "Zucchini",
+  "options": ["Cucumber", "Zucchini", "Green Bean", "Celery"]
+},
+{
+  "id": 85,
+  "imagePath": "questions/85.png",
+  "correctAnswer": "Lighthouse",
+  "options": ["Lighthouse", "Tower", "Castle", "Skyscraper"]
+}
 ]
