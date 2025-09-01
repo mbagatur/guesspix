@@ -328,6 +328,97 @@
   "imagePath": "questions/55.png",
   "correctAnswer": "Koi Fish",
   "options": ["Goldfish", "Koi Fish", "Carp", "Salmon"]
+},
+
+{
+  "id": 56,
+  "imagePath": "questions/56.png",
+  "correctAnswer": "Octopus",
+  "options": ["Squid", "Octopus", "Jellyfish", "Crab"]
+},
+{
+  "id": 57,
+  "imagePath": "questions/57.png",
+  "correctAnswer": "Lemon",
+  "options": ["Lemon", "Lime", "Orange", "Grapefruit"]
+},
+{
+  "id": 58,
+  "imagePath": "questions/58.png",
+  "correctAnswer": "Panda",
+  "options": ["Panda", "Bear", "Raccoon", "Koala"]
+},
+{
+  "id": 59,
+  "imagePath": "questions/59.png",
+  "correctAnswer": "Helicopter",
+  "options": ["Helicopter", "Airplane", "Glider", "Drone"]
+},
+{
+  "id": 60,
+  "imagePath": "questions/60.png",
+  "correctAnswer": "Cabbage",
+  "options": ["Lettuce", "Cabbage", "Kale", "Spinach"]
+},
+{
+  "id": 61,
+  "imagePath": "questions/61.png",
+  "correctAnswer": "Cheetah",
+  "options": ["Leopard", "Cheetah", "Jaguar", "Cougar"]
+},
+{
+  "id": 62,
+  "imagePath": "questions/62.png",
+  "correctAnswer": "Accordion",
+  "options": ["Accordion", "Piano", "Organ", "Keyboard"]
+},
+{
+  "id": 63,
+  "imagePath": "questions/63.png",
+  "correctAnswer": "Mango",
+  "options": ["Peach", "Mango", "Papaya", "Apricot"]
+},
+{
+  "id": 64,
+  "imagePath": "questions/64.png",
+  "correctAnswer": "Whale",
+  "options": ["Whale", "Shark", "Dolphin", "Seal"]
+},
+{
+  "id": 65,
+  "imagePath": "questions/65.png",
+  "correctAnswer": "Skyscraper",
+  "options": ["Tower", "Castle", "Skyscraper", "Lighthouse"]
+},
+{
+  "id": 66,
+  "imagePath": "questions/66.png",
+  "correctAnswer": "Goose",
+  "options": ["Duck", "Goose", "Swan", "Turkey"]
+},
+{
+  "id": 67,
+  "imagePath": "questions/67.png",
+  "correctAnswer": "Peach",
+  "options": ["Apple", "Peach", "Apricot", "Plum"]
+},
+{
+  "id": 68,
+  "imagePath": "questions/68.png",
+  "correctAnswer": "Rhinoceros",
+  "options": ["Hippo", "Rhino", "Elephant", "Buffalo"]
+},
+{
+  "id": 69,
+  "imagePath": "questions/69.png",
+  "correctAnswer": "Banjo",
+  "options": ["Banjo", "Guitar", "Harp", "Ukulele"]
+},
+{
+  "id": 70,
+  "imagePath": "questions/70.png",
+  "correctAnswer": "Straw Hut",
+  "options": ["Tent", "Straw Hut", "Cabin", "Igloo"]
 }
 
 ]
