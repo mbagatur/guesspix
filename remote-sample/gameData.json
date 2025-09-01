@@ -460,8 +460,8 @@
 {
   "id": 77,
   "imagePath": "questions/77.png",
-  "correctAnswer": "Accordion",
-  "options": ["Accordion", "Harmonica", "Organ", "Keyboard"]
+  "correctAnswer": "Harmonica",
+  "options": ["Accordion", "Harmonica", "Flute", "Clarinet"]
 },
 {
   "id": 78,
@@ -496,8 +496,8 @@
 {
   "id": 83,
   "imagePath": "questions/83.png",
-  "correctAnswer": "Pomegranate",
-  "options": ["Plum", "Pomegranate", "Cherry", "Apple"]
+  "correctAnswer": "Fig",
+  "options": ["Fig", "Plum", "Date", "Olive"]
 },
 {
   "id": 84,
@@ -508,7 +508,7 @@
 {
   "id": 85,
   "imagePath": "questions/85.png",
-  "correctAnswer": "Lighthouse",
-  "options": ["Lighthouse", "Tower", "Castle", "Skyscraper"]
+  "correctAnswer": "Volcano",
+  "options": ["Mountain", "Hill", "Volcano", "Cliff"]
 }
 ]
