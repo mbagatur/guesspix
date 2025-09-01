@@ -148,5 +148,96 @@
     "imagePath": "questions/25.png",
     "correctAnswer": "Camera",
     "options": ["Camera", "Phone", "Telescope", "Binoculars"]
+  },
+  {
+    "id": 26,
+    "imagePath": "questions/26.png",
+    "correctAnswer": "Apple",
+    "options": ["Apple", "Peach", "Pear", "Plum"]
+  },
+  {
+    "id": 27,
+    "imagePath": "questions/27.png",
+    "correctAnswer": "Zebra",
+    "options": ["Zebra", "Horse", "Donkey", "Giraffe"]
+  },
+  {
+    "id": 28,
+    "imagePath": "questions/28.png",
+    "correctAnswer": "Chair",
+    "options": ["Table", "Bench", "Sofa", "Chair"]
+  },
+  {
+    "id": 29,
+    "imagePath": "questions/29.png",
+    "correctAnswer": "Coconut",
+    "options": ["Coconut", "Melon", "Pineapple", "Papaya"]
+  },
+  {
+    "id": 30,
+    "imagePath": "questions/30.png",
+    "correctAnswer": "Flamingo",
+    "options": ["Crane", "Stork", "Flamingo", "Pelican"]
+  },
+  {
+    "id": 31,
+    "imagePath": "questions/31.png",
+    "correctAnswer": "Laptop",
+    "options": ["Tablet", "Laptop", "Monitor", "Keyboard"]
+  },
+  {
+    "id": 32,
+    "imagePath": "questions/32.png",
+    "correctAnswer": "Parrot",
+    "options": ["Crow", "Parrot", "Eagle", "Sparrow"]
+  },
+  {
+    "id": 33,
+    "imagePath": "questions/33.png",
+    "correctAnswer": "Pear",
+    "options": ["Pear", "Apple", "Guava", "Plum"]
+  },
+  {
+    "id": 34,
+    "imagePath": "questions/34.png",
+    "correctAnswer": "Violin",
+    "options": ["Cello", "Harp", "Violin", "Guitar"]
+  },
+  {
+    "id": 35,
+    "imagePath": "questions/35.png",
+    "correctAnswer": "Kangaroo",
+    "options": ["Kangaroo", "Wallaby", "Deer", "Rabbit"]
+  },
+  {
+    "id": 36,
+    "imagePath": "questions/36.png",
+    "correctAnswer": "Plum",
+    "options": ["Peach", "Plum", "Cherry", "Apricot"]
+  },
+  {
+    "id": 37,
+    "imagePath": "questions/37.png",
+    "correctAnswer": "Shark",
+    "options": ["Whale", "Shark", "Dolphin", "Swordfish"]
+  },
+  {
+    "id": 38,
+    "imagePath": "questions/38.png",
+    "correctAnswer": "Lighthouse",
+    "options": ["Tower", "Castle", "Lighthouse", "Church"]
+  },
+  {
+    "id": 39,
+    "imagePath": "questions/39.png",
+    "correctAnswer": "Cucumber",
+    "options": ["Cucumber", "Zucchini", "Pickle", "Green Bean"]
+  },
+  {
+    "id": 40,
+    "imagePath": "questions/40.png",
+    "correctAnswer": "Harp",
+    "options": ["Banjo", "Harp", "Violin", "Guitar"]
   }
+
 ]
