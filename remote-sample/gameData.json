@@ -50,8 +50,8 @@
   {
     "id": 9,
     "imagePath": "questions/9.png",
-    "correctAnswer": "Rose",
-    "options": ["Tulip", "Rose", "Sunflower", "Daisy"]
+    "correctAnswer": "Blender",
+    "options": ["Toaster", "Blender", "Mixer", "Coffee Maker"]
   },
   {
     "id": 10,
@@ -62,14 +62,14 @@
   {
     "id": 11,
     "imagePath": "questions/11.png",
-    "correctAnswer": "Ocean",
-    "options": ["Lake", "River", "Ocean", "Pond"]
+    "correctAnswer": "Microwave",
+    "options": ["Oven", "Microwave", "Dishwasher", "Refrigerator"]
   },
   {
     "id": 12,
     "imagePath": "questions/12.png",
     "correctAnswer": "Castle",
-    "options": ["House", "Castle", "Tower", "Church"]
+    "options": ["House", "Castle", "Well", "Church"]
   },
   {
     "id": 13,
@@ -110,14 +110,14 @@
   {
     "id": 19,
     "imagePath": "questions/19.png",
-    "correctAnswer": "Eagle",
-    "options": ["Hawk", "Eagle", "Falcon", "Owl"]
+    "correctAnswer": "Pencil",
+    "options": ["Pen", "Pencil", "Marker", "Crayon"]
   },
   {
     "id": 20,
     "imagePath": "questions/20.png",
-    "correctAnswer": "Watch",
-    "options": ["Clock", "Watch", "Compass", "Timer"]
+    "correctAnswer": "Notebook",
+    "options": ["Book", "Notebook", "Magazine", "Newspaper"]
   },
   {
     "id": 21,
@@ -140,8 +140,8 @@
   {
     "id": 24,
     "imagePath": "questions/24.png",
-    "correctAnswer": "Dolphin",
-    "options": ["Shark", "Dolphin", "Whale", "Seal"]
+    "correctAnswer": "Refrigerator",
+    "options": ["Washing Machine", "Refrigerator", "Dishwasher", "Freezer"]
   },
   {
     "id": 25,
@@ -182,8 +182,8 @@
   {
     "id": 31,
     "imagePath": "questions/31.png",
-    "correctAnswer": "Laptop",
-    "options": ["Tablet", "Laptop", "Monitor", "Keyboard"]
+    "correctAnswer": "Blackboard",
+    "options": ["Whiteboard", "Blackboard", "Poster", "Calendar"]
   },
   {
     "id": 32,
@@ -200,8 +200,8 @@
   {
     "id": 34,
     "imagePath": "questions/34.png",
-    "correctAnswer": "Violin",
-    "options": ["Cello", "Harp", "Violin", "Guitar"]
+    "correctAnswer": "Calculator",
+    "options": ["Phone", "Calculator", "Remote", "Tablet"]
   },
   {
     "id": 35,
@@ -224,8 +224,8 @@
   {
     "id": 38,
     "imagePath": "questions/38.png",
-    "correctAnswer": "Lighthouse",
-    "options": ["Tower", "Castle", "Lighthouse", "Church"]
+    "correctAnswer": "Basketball",
+    "options": ["Basketball", "Orange", "Planet", "Cookie"]
   },
   {
     "id": 39,
@@ -248,8 +248,8 @@
 {
   "id": 42,
   "imagePath": "questions/42.png",
-  "correctAnswer": "Blueberry",
-  "options": ["Blueberry", "Grape", "Blackberry", "Plum"]
+  "correctAnswer": "Sofa",
+  "options": ["Chair", "Sofa", "Bed", "Bench"]
 },
 {
   "id": 43,
@@ -278,8 +278,8 @@
 {
   "id": 47,
   "imagePath": "questions/47.png",
-  "correctAnswer": "Drums",
-  "options": ["Guitar", "Violin", "Drums", "Piano"]
+  "correctAnswer": "Tennis Racket",
+  "options": ["Tennis Racket", "Frying Pan", "Guitar", "Umbrella"]
 },
 {
   "id": 48,
@@ -290,8 +290,8 @@
 {
   "id": 49,
   "imagePath": "questions/49.png",
-  "correctAnswer": "Seal",
-  "options": ["Otter", "Seal", "Walrus", "Sea Lion"]
+  "correctAnswer": "Necklace",
+  "options": ["Bracelet", "Necklace", "Comb", "Earrings"]
 },
 {
   "id": 50,
@@ -302,14 +302,14 @@
 {
   "id": 51,
   "imagePath": "questions/51.png",
-  "correctAnswer": "Pine Tree",
-  "options": ["Oak Tree", "Palm Tree", "Pine Tree", "Maple Tree"]
+  "correctAnswer": "Yo-yo",
+  "options": ["Ball", "Yo-yo", "Boomerang", "Frisbee"]
 },
 {
   "id": 52,
   "imagePath": "questions/52.png",
-  "correctAnswer": "Leopard",
-  "options": ["Leopard", "Jaguar", "Cheetah", "Tiger"]
+  "correctAnswer": "Rose",
+  "options": ["Tulip", "Rose", "Daisy", "Sunflower"]
 },
 {
   "id": 53,
@@ -326,21 +326,21 @@
 {
   "id": 55,
   "imagePath": "questions/55.png",
-  "correctAnswer": "Koi Fish",
-  "options": ["Goldfish", "Koi Fish", "Carp", "Salmon"]
+  "correctAnswer": "Garden Shovel",
+  "options": ["Rake", "Garden Shovel", "Hoe", "Watering Can"]
 },
 
 {
   "id": 56,
   "imagePath": "questions/56.png",
   "correctAnswer": "Octopus",
-  "options": ["Squid", "Octopus", "Jellyfish", "Crab"]
+  "options": ["Fish", "Octopus", "Jellyfish", "Crab"]
 },
 {
   "id": 57,
   "imagePath": "questions/57.png",
   "correctAnswer": "Lemon",
-  "options": ["Lemon", "Lime", "Orange", "Grapefruit"]
+  "options": ["Lemon", "Tomato", "Kiwi", "Pear"]
 },
 {
   "id": 58,
@@ -351,32 +351,32 @@
 {
   "id": 59,
   "imagePath": "questions/59.png",
-  "correctAnswer": "Helicopter",
-  "options": ["Helicopter", "Airplane", "Glider", "Drone"]
+  "correctAnswer": "Mushroom",
+  "options": ["Rock", "Mushroom", "Tree Stump", "Acorn"]
 },
 {
   "id": 60,
   "imagePath": "questions/60.png",
   "correctAnswer": "Cabbage",
-  "options": ["Lettuce", "Cabbage", "Kale", "Spinach"]
+  "options": ["Lettuce", "Cabbage", "Carrot", "Spinach"]
 },
 {
   "id": 61,
   "imagePath": "questions/61.png",
   "correctAnswer": "Cheetah",
-  "options": ["Leopard", "Cheetah", "Jaguar", "Cougar"]
+  "options": ["Cat", "Cheetah", "Jaguar", "Rhino"]
 },
 {
   "id": 62,
   "imagePath": "questions/62.png",
   "correctAnswer": "Accordion",
-  "options": ["Accordion", "Piano", "Organ", "Keyboard"]
+  "options": ["Accordion", "Piano", "Violin", "Guitar"]
 },
 {
   "id": 63,
   "imagePath": "questions/63.png",
   "correctAnswer": "Mango",
-  "options": ["Peach", "Mango", "Papaya", "Apricot"]
+  "options": ["Plum", "Mango", "Orange", "Apricot"]
 },
 {
   "id": 64,
@@ -387,20 +387,20 @@
 {
   "id": 65,
   "imagePath": "questions/65.png",
-  "correctAnswer": "Skyscraper",
-  "options": ["Tower", "Castle", "Skyscraper", "Lighthouse"]
+  "correctAnswer": "Globe",
+  "options": ["Map", "Globe", "Clock", "Compass"]
 },
 {
   "id": 66,
   "imagePath": "questions/66.png",
   "correctAnswer": "Goose",
-  "options": ["Duck", "Goose", "Swan", "Turkey"]
+  "options": ["Chicken", "Goose", "Eagle", "Turkey"]
 },
 {
   "id": 67,
   "imagePath": "questions/67.png",
-  "correctAnswer": "Peach",
-  "options": ["Apple", "Peach", "Apricot", "Plum"]
+  "correctAnswer": "Sunflower",
+  "options": ["Daisy", "Tulip", "Sunflower", "Daffodil"]
 },
 {
   "id": 68,
@@ -411,14 +411,14 @@
 {
   "id": 69,
   "imagePath": "questions/69.png",
-  "correctAnswer": "Banjo",
-  "options": ["Banjo", "Guitar", "Harp", "Ukulele"]
+  "correctAnswer": "Bread",
+  "options": ["Cake", "Bread", "Bagel", "Donut"]
 },
 {
   "id": 70,
   "imagePath": "questions/70.png",
-  "correctAnswer": "Straw Hut",
-  "options": ["Tent", "Straw Hut", "Cabin", "Igloo"]
+  "correctAnswer": "Cheese",
+  "options": ["Butter", "Cheese", "Cream", "Yogurt"]
 },
 
 {
@@ -430,20 +430,20 @@
 {
   "id": 72,
   "imagePath": "questions/72.png",
-  "correctAnswer": "Papaya",
-  "options": ["Papaya", "Mango", "Peach", "Melon"]
+  "correctAnswer": "Ice Cream",
+  "options": ["Cake", "Ice Cream", "Pudding", "Milkshake"]
 },
 {
   "id": 73,
   "imagePath": "questions/73.png",
   "correctAnswer": "Saxophone",
-  "options": ["Saxophone", "Trumpet", "Trombone", "Clarinet"]
+  "options": ["Saxophone", "Flute", "Guitar", "Clarinet"]
 },
 {
   "id": 74,
   "imagePath": "questions/74.png",
   "correctAnswer": "Fox",
-  "options": ["Dog", "Coyote", "Fox", "Wolf"]
+  "options": ["Dog", "Lion", "Fox", "Wolf"]
 },
 {
   "id": 75,
@@ -455,7 +455,7 @@
   "id": 76,
   "imagePath": "questions/76.png",
   "correctAnswer": "Deer",
-  "options": ["Antelope", "Deer", "Moose", "Goat"]
+  "options": ["Dog", "Deer", "Bear", "Goat"]
 },
 {
   "id": 77,
@@ -467,37 +467,37 @@
   "id": 78,
   "imagePath": "questions/78.png",
   "correctAnswer": "Pinecone",
-  "options": ["Acorn", "Nut", "Pinecone", "Seed"]
+  "options": ["Acorn", "Nut", "Pinecone", "Soil"]
 },
 {
   "id": 79,
   "imagePath": "questions/79.png",
   "correctAnswer": "Pelican",
-  "options": ["Pelican", "Crane", "Stork", "Heron"]
+  "options": ["Pelican", "Seagull", "Crow", "Fish"]
 },
 {
   "id": 80,
   "imagePath": "questions/80.png",
-  "correctAnswer": "Radish",
-  "options": ["Radish", "Turnip", "Beetroot", "Onion"]
+  "correctAnswer": "Cookie",
+  "options": ["Cookie", "Cracker", "Biscuit", "Wafer"]
 },
 {
   "id": 81,
   "imagePath": "questions/81.png",
   "correctAnswer": "Canoe",
-  "options": ["Canoe", "Kayak", "Boat", "Raft"]
+  "options": ["Canoe", "Airplane", "Car", "Ship"]
 },
 {
   "id": 82,
   "imagePath": "questions/82.png",
   "correctAnswer": "Lynx",
-  "options": ["Bobcat", "Tiger", "Lynx", "Cheetah"]
+  "options": ["Zebra", "Tiger", "Lynx", "Cheetah"]
 },
 {
   "id": 83,
   "imagePath": "questions/83.png",
   "correctAnswer": "Fig",
-  "options": ["Fig", "Plum", "Date", "Olive"]
+  "options": ["Fig", "Plum", "Pomegranate", "Olive"]
 },
 {
   "id": 84,
@@ -508,32 +508,32 @@
 {
   "id": 85,
   "imagePath": "questions/85.png",
-  "correctAnswer": "Volcano",
-  "options": ["Mountain", "Hill", "Volcano", "Cliff"]
+  "correctAnswer": "Pasta",
+  "options": ["Rice", "Pasta", "Noodles", "Quinoa"]
 },
 {
   "id": 86,
   "imagePath": "questions/86.png",
-  "correctAnswer": "Walrus",
-  "options": ["Seal", "Walrus", "Sea Lion", "Otter"]
+  "correctAnswer": "Hammer",
+  "options": ["Screwdriver", "Hammer", "Wrench", "Pliers"]
 },
 {
   "id": 87,
   "imagePath": "questions/87.png",
   "correctAnswer": "Dragonfly",
-  "options": ["Bee", "Dragonfly", "Butterfly", "Moth"]
+  "options": ["Bee", "Dragonfly", "Butterfly", "Wasp"]
 },
 {
   "id": 88,
   "imagePath": "questions/88.png",
-  "correctAnswer": "Guava",
-  "options": ["Guava", "Pear", "Mango", "Apple"]
+  "correctAnswer": "Soccer Ball",
+  "options": ["Basketball", "Soccer Ball", "Tennis Ball", "Volleyball"]
 },
 {
   "id": 89,
   "imagePath": "questions/89.png",
-  "correctAnswer": "Sloth",
-  "options": ["Monkey", "Koala", "Sloth", "Bear"]
+  "correctAnswer": "Typewriter",
+  "options": ["Keyboard", "Typewriter", "Calculator", "Computer"]
 },
 {
   "id": 90,
@@ -544,20 +544,20 @@
 {
   "id": 91,
   "imagePath": "questions/91.png",
-  "correctAnswer": "Cranberry",
-  "options": ["Blueberry", "Cranberry", "Raspberry", "Cherry"]
+  "correctAnswer": "Ruler",
+  "options": ["Pencil", "Ruler", "Eraser", "Compass"]
 },
 {
   "id": 92,
   "imagePath": "questions/92.png",
-  "correctAnswer": "Moose",
-  "options": ["Deer", "Moose", "Elk", "Antelope"]
+  "correctAnswer": "Windmill",
+  "options": ["Lighthouse", "Windmill", "Tower", "Chimney"]
 },
 {
   "id": 93,
   "imagePath": "questions/93.png",
   "correctAnswer": "Pineapple Plant",
-  "options": ["Cactus", "Pineapple Plant", "Agave", "Aloe Vera"]
+  "options": ["Cactus", "Pineapple Plant", "Pine Tree", "Aloe Vera"]
 },
 {
   "id": 94,
@@ -569,13 +569,13 @@
   "id": 95,
   "imagePath": "questions/95.png",
   "correctAnswer": "Cactus",
-  "options": ["Fern", "Cactus", "Palm", "Bamboo"]
+  "options": ["Kiwi", "Cactus", "Palm", "Bamboo"]
 },
 {
   "id": 96,
   "imagePath": "questions/96.png",
-  "correctAnswer": "Falcon",
-  "options": ["Eagle", "Hawk", "Falcon", "Owl"]
+  "correctAnswer": "Paintbrush",
+  "options": ["Pen", "Paintbrush", "Pencil", "Marker"]
 },
 {
   "id": 97,
@@ -587,19 +587,19 @@
   "id": 98,
   "imagePath": "questions/98.png",
   "correctAnswer": "Chameleon",
-  "options": ["Gecko", "Chameleon", "Lizard", "Iguana"]
+  "options": ["Crocodile", "Chameleon", "Snake", "Iguana"]
 },
 {
   "id": 99,
   "imagePath": "questions/99.png",
-  "correctAnswer": "Kiwi Fruit",
-  "options": ["Kiwi Fruit", "Avocado", "Fig", "Plum"]
+  "correctAnswer": "Helicopter",
+  "options": ["Drone", "Helicopter", "Airplane", "Rocket"]
 },
 {
   "id": 100,
   "imagePath": "questions/100.png",
   "correctAnswer": "Igloo",
-  "options": ["Igloo", "Tent", "Hut", "Cabin"]
+  "options": ["Igloo", "Tent", "Sea", "Snowman"]
 }
 
 ]
